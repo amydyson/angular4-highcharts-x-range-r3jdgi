@@ -25,16 +25,80 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+
+
     Highcharts.chart(this.container.nativeElement, {
 
       chart: {
-        type: 'xrange'
+        type: 'xrange',
+        backgroundColor: 'transparent',
+        inverted: false,
+        zoomType: 'x',
+        panning: true,
+        panKey: 'shift',
+        ignoreHiddenSeries: false,
+        resetZoomButton: {
+            position: {
+            align: 'right',
+            verticalAlign: 'top',
+            x: -25,
+            y: -105
+          },
+          theme: {
+            fill: 'none',
+            stroke: 'none',
+            style: {
+              color: '#0274b5',
+              fontSize: '14px',
+              fontWeight: 'light'
+            },
+            states: {
+              hover: {
+                fill: 'none',
+              }
+            }
+          }
+        }
       },
+      
       title: {
         text: 'Highcharts X-range'
       },
       xAxis: {
-        type: 'datetime'
+        type: 'datetime',
+        lineWidth: 2,
+        lineColor: '#2a2a2a',
+        title: {
+          text: null
+        },
+        crosshair: {
+          className: 'ng-hide',
+          width: 0
+        },
+        dateTimeLabelFormats: {
+          second: '%d-%b-%Y<br/>%H:%M:%S',
+          minute: '%d-%b-%Y<br/>%H:%M',
+          hour: '%d-%b-%Y<br/>%H:%M',
+          day: '%d-%b-%Y',
+          week: '%d-%b-%Y',
+          month: '%b-%Y',
+          year: '%Y'
+        },
+        gridLineWidth: 0,
+        tickColor: '#424242',
+        tickLength: 25,
+        tickWidth: 2,
+        opposite: true,
+        minRange: 24 * 3600 * 1000,
+        min:  Date.UTC(2014, 10, 21),
+        max:  Date.UTC(2014, 12, 21),
+        labels: {
+          y: -40,
+          align: 'center',
+          style: {
+            color: '#828282'
+          }
+        },
       },
       yAxis: {
         title: {
