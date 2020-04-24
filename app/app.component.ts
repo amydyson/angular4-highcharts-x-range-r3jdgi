@@ -18,7 +18,7 @@ import { Http, Response, Headers, RequestOptions, Jsonp, JsonpModule } from '@an
 
 })
 export class AppComponent implements OnInit {
-  name = `Amy`;
+  name = `XRange`;
   @ViewChild("container", { read: ElementRef }) container: ElementRef;
 
   constructor() {
